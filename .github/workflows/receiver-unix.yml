@@ -15,3 +15,11 @@ jobs:
     - uses: actions/checkout@v2
     - name: make
       run: cd Receivers/unix && cmake . && make
+
+      
+    - name: Upload Scream artifacts
+      uses: actions/upload-artifact@v4
+      with:
+        name: scream-receiver
+        path: |
+            /home/runner/work/scream/scream/Receivers/unix
